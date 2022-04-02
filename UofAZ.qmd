@@ -1,0 +1,75 @@
+---
+title: "Multivariate Analyses of Ecological, Metabolomic, and Morphometric Data"
+author: "Eric R. Scott"
+date: "`r Sys.Date()`"
+format: revealjs
+footer: Wildlife Ecology and Conservation, University of Florida
+---
+
+## Beginning
+
+-   Common approaches to multivariate data
+
+-   Many ecologists unaware of supervised methods despite supervised multivariate questions
+
+    > Quote from old statistician guy
+
+-   Lack of intuitive examples
+
+## Muffins and Cupcakes
+
+-   Web scraping
+
+-   sub-sampling
+
+-   results are intuitive, good for teaching
+
+## Ecological traits
+
+-   Muir example from Oecologia paper
+
+## Simulation Study
+
+-   Point out how separation in PLS doesn't mean significance
+
+-   Correction to that one paper
+
+## Tea Metabolites
+
+-   Figures from tea papers I've contributed to
+
+-   Something about VIP scores and mention webchem
+
+## Plantago
+
+-   (needs better title)
+
+-   figure from Colin's paper
+
+## Project fishstats
+
+-   Morphological measurements along the body
+
+-   Collapse into 3 coefs for quadratic line
+
+-   Use coefs in multivariate model
+
+## BACE soil legacy thing
+
+-   Highlight use of github pages for sharing report and figures.
+
+## Other
+
+-   Interest in reproducibility
+
+-   Reprohacks
+
+-   Getting labs set up using GitHub
+
+-   GAMs?
+
+-   population modeling?
+
+-   Data quality assurance
+
+-   R packages for data sharing and code stuff too
