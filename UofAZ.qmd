@@ -2,9 +2,16 @@
 title: "Multivariate Analyses of Ecological, Metabolomic, and Morphometric Data"
 author: "Eric R. Scott"
 date: "`r Sys.Date()`"
-format: revealjs
-footer: Wildlife Ecology and Conservation, University of Florida
+format: 
+  revealjs:
+    theme: sky
+institute: "Wildlife Ecology and Conservation, University of Florida"
+execute:
+  echo: false
+  warning: false
 ---
+
+<!--# best themes: moon, night, simple, sky -->
 
 ## Beginning
 
