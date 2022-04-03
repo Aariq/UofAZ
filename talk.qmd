@@ -1,5 +1,5 @@
 ---
-title: "Multivariate Analyses of Ecological, Metabolomic, and Morphometric Data"
+title: "Multivariate Analyses in Ecology"
 author: "Eric R. Scott"
 date: "`r Sys.Date()`"
 format: 
