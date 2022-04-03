@@ -1,26 +1,226 @@
 ---
 title: "Basics of Reproducible Research with R"
 author: "Eric R. Scott"
-format: revealjs
+date: "`r Sys.Date()`"
+format: 
+  revealjs:
+    theme: dark
+institute: "Wildlife Ecology and Conservation, University of Florida"
+execute:
+  echo: false
+  warning: false
 ---
 
-## Quarto
+## What is Reproducibility?
 
-Quarto enables you to weave together content and executable code into a finished presentation.
-To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+[![How the Turing Way defines reproducible research](images/reproducible-matrix.jpeg)](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html)
 
-## Bullets
+## Why Reproducibility?
 
-When you click the **Render** button a document will be generated that includes:
+::: incremental
+-   Simplify collaboration
 
--   Content authored with markdown
--   Output from executable code
+-   For your future self
 
-## Code
+-   Peer review
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
-You can embed code like this:
+-   Efficient revising
 
-```{r}
-1 + 1
+-   Get cited more often!
+:::
+
+<!--# add image on the right here -->
+
+## Outline
+
+1. The Research Compendium
+2. RStudio Projects
+3. R Markdown
+4. The `here` package `r emo::ji("package")`
+5. The `renv` package `r emo::ji("package")`
+
+::: notes
+These are things you can do *today* to improve reproducibility.
+:::
+
+## Research Compendium
+::: incremental
+::: columns
+
+::: {.column width="50%"}
+
+[Simple:]{.underline}
+
+    compendium/
+    ├── data
+    │   ├── my_data.csv
+    ├── analysis
+    │   └── my_script.R
+    ├── output
+    │   └── figure.png
+    └── README.md
+:::
+
+::: {.column width="50%"}
+-   Separate data, method, and output
+-   Organize and name files thoughtfully
+-   Document steps to reproduce
+-   Raw data is always **read-only**
+:::
+
+:::
+:::
+
+## Research Compendium
+
+::: columns
+
+
+::: {.column width="50%"}
+[More Complex:]{.underline}
+
+    compendium/
+    ├── data_raw
+    │   ├── field_data.csv
+    │   └── temperature_logger.xlsx
+    ├── data_clean
+    │   └── data_full.csv
+    ├── R
+    │   ├── 01-wrangle_field_data.R
+    │   ├── 02-combine_data.R
+    │   └── 03-analysis.R
+    ├── figures
+    │   ├── barplot.png
+    │   └── timeseries.png
+    ├── docs
+    │   ├── notes.Rmd
+    │   ├── paper.Rmd
+    │   └── references.bib
+    └── README.md
+:::
+
+::: {.column width="50%"}
+-   Separate data, method, and output
+-   Organize and name files thoughtfully
+-   Document steps to reproduce
+-   Raw data is always **read-only**
+:::
+:::
+
+## RStudio Projects
+
+-   Great way to organize research compendia
+
+-   Easily switch between active projects
+
+-   Never `setwd()` again!
+    File paths are relative to project directory
+
+-   Integration with version control (git and GitHub)
+
+. . .
+
+### DEMO `r emo::ji("computer")`
+
+## Reproducible Reports
+
+RMarkdown allows you to combine prose, code, and code outputs to create dynamic, reproducible documents.
+
+-   Notebooks
+-   Reports
+-   Manuscripts
+-   Presentations
+
+Use visual editor mode for GUI!
+
+. . .
+
+### DEMO `r emo::ji("computer")`
+
+::: notes
+Update data or code, everything else can update automatically
+
+Mention Quarto?
+:::
+
+
+## Reproducible File Paths
+
+If the start of your script looks like this...
+
+``` r
+setwd("escott03/documents/research/fire_ecology/")
 ```
+
+... or like this ...
+
+``` r
+data_path <- "escott03/documents/research/fire_ecology/data/"
+df <- read.csv(paste0(data_path, "field_data.csv"))
+```
+
+... it is *guaranteed* to not be reproducible
+
+## Reproducible File Paths
+
+The `here` package lets you use relative paths that work on Windows, macOS, and Linux
+
+. . .
+
+So this...
+
+``` r
+data_path <- "escott03/documents/research/fire_ecology/data/"
+df <- read.csv(paste0(data_path, "field_data.csv"))
+```
+
+. . .
+
+... becomes this ...
+
+``` r
+library(here)
+df <- read.csv(here("data", "field_data.csv"))
+```
+
+. . .
+
+### DEMO `r emo::ji("computer")`
+
+## Reproducible Environments
+
+::: incremental
+-   What if your code depends on a particular version of an R package?
+
+-   `renv` makes projects **isolated**, **portable**, and **reproducible**
+
+    -   Isolated: every project has it's own package library
+
+    -   Portable: easy to install all necessary packages on another computer
+
+    -   Reproducible: records exact package versions used
+:::
+
+. . .
+
+### DEMO `r emo::ji("computer")`
+
+::: notes
+Or if package update breaks your research compendium
+
+mention that it
+:::
+
+## Further Reading
+
+- [Five selfish reasons to work reproducibly](https://doi.org/10.1186/s13059-015-0850-7)
+
+- [research-compendium.science](https://research-compendium.science/)
+
+- [R Projects](https://r4ds.had.co.nz/workflow-projects.html)
+
+- [`here`](https://here.r-lib.org/)
+
+- [renv](https://rstudio.github.io/renv/articles/renv.html)
+
+- [CRAN Task View: Reproducible Research](https://cran.r-project.org/view=ReproducibleResearch)
