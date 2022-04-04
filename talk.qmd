@@ -2,9 +2,7 @@
 title: "Multivariate Analyses in Ecology"
 author: "Eric R. Scott"
 date: "`r Sys.Date()`"
-format: 
-  revealjs:
-    theme: default
+format: revealjs
 institute: "Wildlife Ecology and Conservation, University of Florida"
 execute:
   echo: false
@@ -18,29 +16,11 @@ Two-step approach common in ecology:
 1.  Reduce dimensionality with, e.g., PCA
 2.  Include first 1--3 axes of co-variation in a regression
 
-. . .
+In a mini-review of 130 papers, only 20% that used this method retained more than 2 components for regression
 
-This answers the question...
+## Alternative Methods
 
-> Do the variables that co-vary the most have an effect on the response?
-
-. . .
-
-... NOT...
-
-> Which variables, if any, have an effect on the response?
-
-## 
-
-We've known there are problems with this approach for a long time!
-
-> Mosteller and Tukey argue ... that the components with small variance are unlikely to be important in regression, apparently on the basis that nature is "tricky, but not downright mean".
-> We shall see in the examples below that without too much effort we can find examples where nature *is* "downright mean".
-> --- Ian T. Joliffe, 1982
-
-## Supervised Methods
-
-::: incremental
+::: columns
 ::: {.column width="50%"}
 -   [Unsupervised]{.underline}: axes explain **variation** in the data
 :::
@@ -62,76 +42,200 @@ We've known there are problems with this approach for a long time!
 :::
 :::
 
+## Misuse of two-step method
+
+The **two-step method** (e.g. PCA-regression) answers the question...
+
+> Do the variables that co-vary the most have an effect on the response?
+
+. . .
+
+...while **supervised analyses** answer the question...
+
+> Which variables, if any, have an effect on the response?
+
+. . .
+
+-   Mini-review: 68 studies used principal components in other statistical models.
+
+-   40 of those studies were incorrectly using PCA to answer "supervised" question
+
+## 
+
+![](images/Joliffe.png){fig-align="center"}
+
+> \[Others argue\] that the components with small variance are unlikely to be important in regression, apparently on the basis that nature is "tricky, but not downright mean".
+> We shall see in the examples below that without too much effort we can find examples where nature *is* "downright mean".
+
+::: notes
+we've always known that this two-step method is not ideal
+:::
+
 ## Why are Supervised Methods Underused?
 
+::: incremental
 -   Lack of awareness / training
 
 -   Familiarity with two-step method
 
 -   Unconcerned with consequences ("nature isn't downright mean, right?")
-
-::: notes
-could possibly include results from mini-review here?
 :::
 
-## Muffins vs. Cupcakes
+::: notes
+:::
 
-To explain multivariate analyses and the consequences of unsupervised vs. supervised, I needed an intuitive example.
+## An Intuitive Example
 
+![](images/cupcake-v-muffin.png){fig-align="center"}
+
+::: incremental
 -   Scraped muffin and cupcake recipes from allrecipes.com
 
 -   Extracted ingredients, standardized units, and removed frosting
 
--   269 recipes, 40 ingredients total
+-   Sampled 30 recipes with 40 ingredients for analysis
+:::
 
--   Sampled 30 recipes for analysis
+## Unsupervised Results {.smaller}
 
-## Ecological traits
+![](images/muffin-pca.png){fig-align="center"}
 
--   Muir example from Oecologia paper
+PC1: leavening system
 
-## Simulation Study
+PC2: healthiness?
 
--   Point out how separation in PLS doesn't mean significance
+Neither separate muffins (brown) and cupcakes (red) well
 
--   Correction to that one paper
+## Supervised Results {.smaller}
+
+![](images/muffin-plsda.png){fig-align="center" width="651"}
+
+Axis 1: Vanilla vs. fruit
+
+*Separation* in PLS score plot is **not** necessarily meaningful!
+
+Permutation test finds significant difference (p \< 0.005).
+
+::: notes
+vanilla doesn't vary much---usually 1tsp---so it doesn't correlate strongly with first two PCs
+:::
+
+## Convincing Ecologists
+
+![](images/oecologia.png){fig-align="center"}
+
+1.  Mini-review shows ecologists often ask "supervised" questions, but use two-step approach
+2.  Case study on leaf traits and habitat shows nature is "downright mean"
+3.  Simulation study showing when PCA and PLS give different answers
+
+::: notes
+It was actually quite difficult to find an example where PCA-regression would possibly make sense
+
+Simulation also points out the need for permutation testing for PLS
+:::
 
 ## Tea Metabolites
 
--   Figures from tea papers I've contributed to
+Collaboration with Al Robbat Jr. in Tufts Chemistry Department
 
--   Something about VIP scores and mention webchem
+::: incremental
+-   Shiny app to enable data QA/QC for spectral deconvolution of GC-MS data
 
-## Plantago
+-   Multivariate analyses to test climate impacts on tea metabolites and identify important markers of tea quality
 
--   (needs better title)
+-   Assign flavor and aroma percepts using `webchem` `r emo::ji("package")`
+:::
 
--   figure from Colin's paper
+## Climate Change and Plant Chemistry {.smaller}
 
-## Project fishstats
+::: columns
+::: {.column width="50%"}
+![](images/plantago.png){fig-align="center" width="536"}
+:::
 
--   Morphological measurements along the body
+::: {.column width="50%"}
+Used RDA to test for impacts of warming, drought, and their interaction on secondary metabolites
+:::
+:::
 
--   Collapse into 3 coefs for quadratic line
+![](images/plantago-rda.png){fig-align="center" width="736"}
 
--   Use coefs in multivariate model
+## "Project Fishstats"
 
-## BACE soil legacy thing
+::: columns
+::: {.column width="70%"}
+![](images/fishstats.png){fig-align="left"}
 
--   Highlight use of github pages for sharing report and figures.
+-   Morphological measurements of vertebrae along fish body length
+-   Fit a quadratic line to collapse into three uncorrelated coefficients
+-   Include coefficients as predictors in linear discriminant analysis (LDA)
+:::
 
-## Other
+::: {.column width="30%"}
+![](images/fishstats-body.png){fig-align="right"}
 
--   Interest in reproducibility
+![](images/fishstats-lda.png){fig-align="right"}
+:::
+:::
+
+## Current & Historical Drought Effects
+
+::: incremental
+-   Transplant experiment using soils from different long-term drought treatments into current drought treatments
+
+-   Growth, yield, nutrient content of 3 crops
+
+-   Report shared with co-authors via R Markdown and GitHub pages
+:::
+
+. . .
+
+<https://aariq.github.io/BACE-legacy-effects/>
+
+## Other Past Contributions
+
+### R Package development
+
+-   [`bumbl`](https://github.com/Aariq/bumbl) `r emo::ji("package")` fits switchpoint GLMs to model bumblebee colony growth data
+
+-   [`bdffpRain`](https://github.com/BrunaLab/BDFFP-precipitation) `r emo::ji("package")` is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
+
+## Other Past Contributions
+
+### Workshops / Demos
+
+-   RMarkdown
+
+-   Reproducible analyses
+
+-   Git and GitHub for ecologists
+
+## Future Contributions
+
+### Research
+
+::: incremental
+-   Chemometrics / metabolomics
+
+-   Lagged effects
+
+-   Generalized Additive Models (GAMs)
+
+-   Demographic modeling
+
+-   Pedagogical benefits of peer code review
+:::
+
+## Future Contributions
+
+### Workshops / Demos
+
+::: incremental
+-   Data quality assurance with `pointblank` `r emo::ji("package")`
+
+-   Collaborative manuscript editing with GitHub
+
+-   Workflow management with `targets` `r emo::ji("package")`
 
 -   Reprohacks
-
--   Getting labs set up using GitHub
-
--   GAMs?
-
--   population modeling?
-
--   Data quality assurance
-
--   R packages for data sharing and code stuff too
+:::

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.172">
   <meta name="author" content="Eric R. Scott">
-  <meta name="dcterms.date" content="2022-04-03">
+  <meta name="dcterms.date" content="2022-04-04">
   <title>Multivariate Analyses in Ecology</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -325,7 +325,7 @@
   <h1 class="title">Multivariate Analyses in Ecology</h1>
   <p class="author">Eric R. Scott</p>
   <p class="institute">Wildlife Ecology and Conservation, University of Florida</p>
-  <p class="date">2022-04-03</p>
+  <p class="date">2022-04-04</p>
 </section>
 
 <section id="approaches-to-multivariate-data" class="slide level2">
@@ -335,35 +335,16 @@
 <li>Reduce dimensionality with, e.g., PCA</li>
 <li>Include first 1–3 axes of co-variation in a regression</li>
 </ol>
-<div class="fragment">
-<p>This answers the question…</p>
-<blockquote>
-<p>Do the variables that co-vary the most have an effect on the response?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<p>… NOT…</p>
-<blockquote>
-<p>Which variables, if any, have an effect on the response?</p>
-</blockquote>
-</div>
+<p>In a mini-review of 130 papers, only 20% that used this method retained more than 2 components for regression</p>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>We’ve known there are problems with this approach for a long time!</p>
-<blockquote>
-<p>Mosteller and Tukey argue … that the components with small variance are unlikely to be important in regression, apparently on the basis that nature is “tricky, but not downright mean”. We shall see in the examples below that without too much effort we can find examples where nature <em>is</em> “downright mean”. — Ian T. Joliffe, 1982</p>
-</blockquote>
-</section>
-<section id="supervised-methods" class="slide level2">
-<h2>Supervised Methods</h2>
-<div>
+<section id="alternative-methods" class="slide level2">
+<h2>Alternative Methods</h2>
+<div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><u>Unsupervised</u>: axes explain <strong>variation</strong> in the data</li>
+<li><u>Unsupervised</u>: axes explain <strong>variation</strong> in the data</li>
 </ul>
-</div>
-<div class="column" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/pca.png" width="500"></p>
@@ -387,79 +368,201 @@
 </div>
 </div>
 </section>
-<section id="why-are-supervised-methods-underused" class="slide level2">
-<h2>Why are Supervised Methods Underused?</h2>
+<section id="misuse-of-two-step-method" class="slide level2">
+<h2>Misuse of two-step method</h2>
+<p>The <strong>two-step method</strong> (e.g.&nbsp;PCA-regression) answers the question…</p>
+<blockquote>
+<p>Do the variables that co-vary the most have an effect on the response?</p>
+</blockquote>
+<div class="fragment">
+<p>…while <strong>supervised analyses</strong> answer the question…</p>
+<blockquote>
+<p>Which variables, if any, have an effect on the response?</p>
+</blockquote>
+</div>
+<div class="fragment">
 <ul>
-<li><p>Lack of awareness / training</p></li>
-<li><p>Familiarity with two-step method</p></li>
-<li><p>Unconcerned with consequences (“nature isn’t downright mean, right?”)</p></li>
+<li><p>Mini-review: 68 studies used principal components in other statistical models.</p></li>
+<li><p>40 of those studies were incorrectly using PCA to answer “supervised” question</p></li>
 </ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="images/Joliffe.png" class="r-stretch quarto-figure-center"><blockquote>
+<p>[Others argue] that the components with small variance are unlikely to be important in regression, apparently on the basis that nature is “tricky, but not downright mean”. We shall see in the examples below that without too much effort we can find examples where nature <em>is</em> “downright mean”.</p>
+</blockquote>
 <aside class="notes">
-<p>could possibly include results from mini-review here?</p>
+<p>we’ve always known that this two-step method is not ideal</p>
 </aside>
 </section>
-<section id="muffins-vs.-cupcakes" class="slide level2">
-<h2>Muffins vs.&nbsp;Cupcakes</h2>
-<p>To explain multivariate analyses and the consequences of unsupervised vs.&nbsp;supervised, I needed an intuitive example.</p>
+<section id="why-are-supervised-methods-underused" class="slide level2">
+<h2>Why are Supervised Methods Underused?</h2>
+<div>
 <ul>
-<li><p>Scraped muffin and cupcake recipes from allrecipes.com</p></li>
-<li><p>Extracted ingredients, standardized units, and removed frosting</p></li>
-<li><p>269 recipes, 40 ingredients total</p></li>
-<li><p>Sampled 30 recipes for analysis</p></li>
+<li class="fragment"><p>Lack of awareness / training</p></li>
+<li class="fragment"><p>Familiarity with two-step method</p></li>
+<li class="fragment"><p>Unconcerned with consequences (“nature isn’t downright mean, right?”)</p></li>
 </ul>
+</div>
+<aside class="notes">
+
+</aside>
 </section>
-<section id="ecological-traits" class="slide level2">
-<h2>Ecological traits</h2>
+<section id="an-intuitive-example" class="slide level2">
+<h2>An Intuitive Example</h2>
+
+<img data-src="images/cupcake-v-muffin.png" class="r-stretch quarto-figure-center"><div>
 <ul>
-<li>Muir example from Oecologia paper</li>
+<li class="fragment"><p>Scraped muffin and cupcake recipes from allrecipes.com</p></li>
+<li class="fragment"><p>Extracted ingredients, standardized units, and removed frosting</p></li>
+<li class="fragment"><p>Sampled 30 recipes with 40 ingredients for analysis</p></li>
 </ul>
+</div>
 </section>
-<section id="simulation-study" class="slide level2">
-<h2>Simulation Study</h2>
-<ul>
-<li><p>Point out how separation in PLS doesn’t mean significance</p></li>
-<li><p>Correction to that one paper</p></li>
-</ul>
+<section id="unsupervised-results" class="slide level2 smaller">
+<h2>Unsupervised Results</h2>
+
+<img data-src="images/muffin-pca.png" class="r-stretch quarto-figure-center"><p>PC1: leavening system</p>
+<p>PC2: healthiness?</p>
+<p>Neither separate muffins (brown) and cupcakes (red) well</p>
+</section>
+<section id="supervised-results" class="slide level2 smaller">
+<h2>Supervised Results</h2>
+
+<img data-src="images/muffin-plsda.png" width="651" class="r-stretch quarto-figure-center"><p>Axis 1: Vanilla vs.&nbsp;fruit</p>
+<p><em>Separation</em> in PLS score plot is <strong>not</strong> necessarily meaningful!</p>
+<p>Permutation test finds significant difference (p &lt; 0.005).</p>
+<aside class="notes">
+<p>vanilla doesn’t vary much—usually 1tsp—so it doesn’t correlate strongly with first two PCs</p>
+</aside>
+</section>
+<section id="convincing-ecologists" class="slide level2">
+<h2>Convincing Ecologists</h2>
+
+<img data-src="images/oecologia.png" class="r-stretch quarto-figure-center"><ol type="1">
+<li>Mini-review shows ecologists often ask “supervised” questions, but use two-step approach</li>
+<li>Case study on leaf traits and habitat shows nature is “downright mean”</li>
+<li>Simulation study showing when PCA and PLS give different answers</li>
+</ol>
+<aside class="notes">
+<p>It was actually quite difficult to find an example where PCA-regression would possibly make sense</p>
+<p>Simulation also points out the need for permutation testing for PLS</p>
+</aside>
 </section>
 <section id="tea-metabolites" class="slide level2">
 <h2>Tea Metabolites</h2>
+<p>Collaboration with Al Robbat Jr.&nbsp;in Tufts Chemistry Department</p>
+<div>
 <ul>
-<li><p>Figures from tea papers I’ve contributed to</p></li>
-<li><p>Something about VIP scores and mention webchem</p></li>
+<li class="fragment"><p>Shiny app to enable data QA/QC for spectral deconvolution of GC-MS data</p></li>
+<li class="fragment"><p>Multivariate analyses to test climate impacts on tea metabolites and identify important markers of tea quality</p></li>
+<li class="fragment"><p>Assign flavor and aroma percepts using <code>webchem</code> 📦</p></li>
 </ul>
+</div>
 </section>
-<section id="plantago" class="slide level2">
-<h2>Plantago</h2>
-<ul>
-<li><p>(needs better title)</p></li>
-<li><p>figure from Colin’s paper</p></li>
-</ul>
+<section id="climate-change-and-plant-chemistry" class="slide level2 smaller">
+<h2>Climate Change and Plant Chemistry</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/plantago.png" width="536"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Used RDA to test for impacts of warming, drought, and their interaction on secondary metabolites</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/plantago-rda.png" width="736"></p>
+</figure>
+</div>
 </section>
 <section id="project-fishstats" class="slide level2">
-<h2>Project fishstats</h2>
+<h2>“Project Fishstats”</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="images/fishstats.png"></p>
+</figure>
+</div>
 <ul>
-<li><p>Morphological measurements along the body</p></li>
-<li><p>Collapse into 3 coefs for quadratic line</p></li>
-<li><p>Use coefs in multivariate model</p></li>
+<li>Morphological measurements of vertebrae along fish body length</li>
+<li>Fit a quadratic line to collapse into three uncorrelated coefficients</li>
+<li>Include coefficients as predictors in linear discriminant analysis (LDA)</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="images/fishstats-body.png"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="images/fishstats-lda.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="current-historical-drought-effects" class="slide level2">
+<h2>Current &amp; Historical Drought Effects</h2>
+<div>
+<ul>
+<li class="fragment"><p>Transplant experiment using soils from different long-term drought treatments into current drought treatments</p></li>
+<li class="fragment"><p>Growth, yield, nutrient content of 3 crops</p></li>
+<li class="fragment"><p>Report shared with co-authors via R Markdown and GitHub pages</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><a href="https://aariq.github.io/BACE-legacy-effects/" class="uri">https://aariq.github.io/BACE-legacy-effects/</a></p>
+</div>
+</section>
+<section id="other-past-contributions" class="slide level2">
+<h2>Other Past Contributions</h2>
+<h3 id="r-package-development">R Package development</h3>
+<ul>
+<li><p><a href="https://github.com/Aariq/bumbl"><code>bumbl</code></a> 📦 fits switchpoint GLMs to model bumblebee colony growth data</p></li>
+<li><p><a href="https://github.com/BrunaLab/BDFFP-precipitation"><code>bdffpRain</code></a> 📦 is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project</p></li>
 </ul>
 </section>
-<section id="bace-soil-legacy-thing" class="slide level2">
-<h2>BACE soil legacy thing</h2>
+<section id="other-past-contributions-1" class="slide level2">
+<h2>Other Past Contributions</h2>
+<h3 id="workshops-demos">Workshops / Demos</h3>
 <ul>
-<li>Highlight use of github pages for sharing report and figures.</li>
+<li><p>RMarkdown</p></li>
+<li><p>Reproducible analyses</p></li>
+<li><p>Git and GitHub for ecologists</p></li>
 </ul>
 </section>
-<section id="other" class="slide level2">
-<h2>Other</h2>
+<section id="future-contributions" class="slide level2">
+<h2>Future Contributions</h2>
+<h3 id="research">Research</h3>
+<div>
 <ul>
-<li><p>Interest in reproducibility</p></li>
-<li><p>Reprohacks</p></li>
-<li><p>Getting labs set up using GitHub</p></li>
-<li><p>GAMs?</p></li>
-<li><p>population modeling?</p></li>
-<li><p>Data quality assurance</p></li>
-<li><p>R packages for data sharing and code stuff too</p></li>
+<li class="fragment"><p>Chemometrics / metabolomics</p></li>
+<li class="fragment"><p>Lagged effects</p></li>
+<li class="fragment"><p>Generalized Additive Models (GAMs)</p></li>
+<li class="fragment"><p>Demographic modeling</p></li>
+<li class="fragment"><p>Pedagogical benefits of peer code review</p></li>
 </ul>
+</div>
+</section>
+<section id="future-contributions-1" class="slide level2">
+<h2>Future Contributions</h2>
+<h3 id="workshops-demos-1">Workshops / Demos</h3>
+<div>
+<ul>
+<li class="fragment"><p>Data quality assurance with <code>pointblank</code> 📦</p></li>
+<li class="fragment"><p>Collaborative manuscript editing with GitHub</p></li>
+<li class="fragment"><p>Workflow management with <code>targets</code> 📦</p></li>
+<li class="fragment"><p>Reprohacks</p></li>
+</ul>
+</div>
 <div class="footer footer-default">
 
 </div>
