@@ -4,32 +4,87 @@ author: "Eric R. Scott"
 date: "`r Sys.Date()`"
 format: 
   revealjs:
-    theme: sky
+    theme: default
 institute: "Wildlife Ecology and Conservation, University of Florida"
 execute:
   echo: false
   warning: false
 ---
 
-<!--# best themes: moon, night, simple, sky -->
+## Approaches to Multivariate Data
 
-## Beginning
+Two-step approach common in ecology:
 
--   Common approaches to multivariate data
+1.  Reduce dimensionality with, e.g., PCA
+2.  Include first 1--3 axes of co-variation in a regression
 
--   Many ecologists unaware of supervised methods despite supervised multivariate questions
+. . .
 
-    > Quote from old statistician guy
+This answers the question...
 
--   Lack of intuitive examples
+> Do the variables that co-vary the most have an effect on the response?
 
-## Muffins and Cupcakes
+. . .
 
--   Web scraping
+... NOT...
 
--   sub-sampling
+> Which variables, if any, have an effect on the response?
 
--   results are intuitive, good for teaching
+## 
+
+We've known there are problems with this approach for a long time!
+
+> Mosteller and Tukey argue ... that the components with small variance are unlikely to be important in regression, apparently on the basis that nature is "tricky, but not downright mean".
+> We shall see in the examples below that without too much effort we can find examples where nature *is* "downright mean".
+> --- Ian T. Joliffe, 1982
+
+## Supervised Methods
+
+::: incremental
+::: {.column width="50%"}
+-   [Unsupervised]{.underline}: axes explain **variation** in the data
+:::
+
+::: {.column width="50%"}
+![](images/pca.png){fig-align="center" width="500"}
+:::
+:::
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+-   [Supervised]{.underline}: axes that explain the **relationship** with **response** variable
+:::
+
+::: {.column width="50%"}
+![](images/plsda.png){fig-align="center" width="500"}
+:::
+:::
+
+## Why are Supervised Methods Underused?
+
+-   Lack of awareness / training
+
+-   Familiarity with two-step method
+
+-   Unconcerned with consequences ("nature isn't downright mean, right?")
+
+::: notes
+could possibly include results from mini-review here?
+:::
+
+## Muffins vs. Cupcakes
+
+To explain multivariate analyses and the consequences of unsupervised vs. supervised, I needed an intuitive example.
+
+-   Scraped muffin and cupcake recipes from allrecipes.com
+
+-   Extracted ingredients, standardized units, and removed frosting
+
+-   269 recipes, 40 ingredients total
+
+-   Sampled 30 recipes for analysis
 
 ## Ecological traits
 
