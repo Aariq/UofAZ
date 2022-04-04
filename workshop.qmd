@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 format: 
   revealjs:
     theme: dark
+    chalkboard: true
 institute: "Wildlife Ecology and Conservation, University of Florida"
 execute:
   echo: false

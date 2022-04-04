@@ -2,11 +2,10 @@
 title: "Multivariate Analyses in Ecology"
 author: "Eric R. Scott"
 date: "`r Sys.Date()`"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 institute: "Wildlife Ecology and Conservation, University of Florida"
-execute:
-  echo: false
-  warning: false
 ---
 
 ## Approaches to Multivariate Data
