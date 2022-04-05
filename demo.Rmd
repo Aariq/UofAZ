@@ -1,0 +1,63 @@
+---
+title: "Demo"
+author: "Eric Scott"
+date: '2022-04-05'
+output: html_document
+---
+
+# Introduction
+
+In this demo, I'll just load some data, do a simple analysis, and make a plot.
+Then, I can update the data and show how everything else, including text generated from in-line code, updates.
+
+```{r include=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(equatiomatic)
+library(broom)
+library(car)
+library(scales)
+```
+
+
+```{r}
+penguins <- penguins %>% filter(!is.na(flipper_length_mm))
+```
+
+
+```{r echo=FALSE}
+sample_n(penguins, 5) %>%
+  knitr::kable(caption = "Table 1. Five random rows from the palmerpenguins dataset.")
+```
+
+The dataset contains measurements on many penguins.
+I will use it to see how flipper length varies with body mass and sex using a regression.
+
+### Regression equation:
+
+$$
+y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2 + \epsilon 
+$$
+
+# Results
+
+```{r include=FALSE}
+m <- lm(flipper_length_mm ~ body_mass_g * sex, data = penguins)
+res <- tidy(Anova(m))
+# res$p.value[1] %>% scales::pvalue()
+```
+
+There was a significant relationship between flipper length and body mass (p < 0.001), and a significant effect of sex (p < 0.001), but no significant interaction (p = 0.542).
+
+
+```{r echo=FALSE}
+augment(m, se_fit = TRUE) %>% 
+  ggplot(aes(x = body_mass_g, fill = sex, color = sex)) +
+  geom_point(aes(y = flipper_length_mm), alpha = 0.5) +
+  geom_ribbon(aes(ymin = .fitted - .se.fit, ymax = .fitted + .se.fit), alpha = 0.4, color = NA) +
+  geom_line(aes(y = .fitted)) +
+  labs(x = "body mass (g)",  y = "flipper length (mm)")
+  
+```
+
+
