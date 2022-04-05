@@ -142,7 +142,7 @@ Collaboration with Al Robbat Jr. in Tufts Chemistry Department
 
 -   Multivariate analyses to test climate impacts on tea metabolites and identify important markers of tea quality
 
--   Assign flavor and aroma percepts using `webchem` `r emo::ji("package")`
+-   Assign flavor and aroma percepts using `webchem` 📦
 :::
 
 ## Climate Change and Plant Chemistry {.smaller}
@@ -157,7 +157,7 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 :::
 :::
 
-![](images/plantago-rda.png){fig-align="center" width="736"}
+![](images/plantago-rda.png){fig-align="center" width="601"}
 
 ## "Project Fishstats"
 
@@ -195,9 +195,9 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 
 ### R Package development
 
--   [`bumbl`](https://github.com/Aariq/bumbl) `r emo::ji("package")` fits switchpoint GLMs to model bumblebee colony growth data
+-   [`bumbl`](https://github.com/Aariq/bumbl) 📦 fits switchpoint GLMs to model bumblebee colony growth data
 
--   [`bdffpRain`](https://github.com/BrunaLab/BDFFP-precipitation) `r emo::ji("package")` is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
+-   [`bdffpRain`](https://github.com/BrunaLab/BDFFP-precipitation) 📦 is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
 
 ## Other Past Contributions
 
@@ -230,11 +230,11 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 ### Workshops / Demos
 
 ::: incremental
--   Data quality assurance with `pointblank` `r emo::ji("package")`
+-   Data quality assurance with `pointblank` 📦
 
 -   Collaborative manuscript editing with GitHub
 
--   Workflow management with `targets` `r emo::ji("package")`
+-   Workflow management with `targets` 📦
 
 -   Reprohacks
 :::

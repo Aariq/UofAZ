@@ -34,22 +34,21 @@ execute:
 
 ## Outline
 
-1. The Research Compendium
-2. RStudio Projects
-3. R Markdown
-4. The `here` package `r emo::ji("package")`
-5. The `renv` package `r emo::ji("package")`
+1.  The Research Compendium
+2.  RStudio Projects
+3.  R Markdown
+4.  The `here` package 📦
+5.  The `renv` package 📦
 
 ::: notes
 These are things you can do *today* to improve reproducibility.
 :::
 
 ## Research Compendium
+
 ::: incremental
 ::: columns
-
 ::: {.column width="50%"}
-
 [Simple:]{.underline}
 
     compendium/
@@ -68,15 +67,12 @@ These are things you can do *today* to improve reproducibility.
 -   Document steps to reproduce
 -   Raw data is always **read-only**
 :::
-
 :::
 :::
 
 ## Research Compendium
 
 ::: columns
-
-
 ::: {.column width="50%"}
 [More Complex:]{.underline}
 
@@ -121,7 +117,7 @@ These are things you can do *today* to improve reproducibility.
 
 . . .
 
-### DEMO `r emo::ji("computer")`
+### DEMO 💻
 
 ## Reproducible Reports
 
@@ -136,14 +132,13 @@ Use visual editor mode for GUI!
 
 . . .
 
-### DEMO `r emo::ji("computer")`
+### DEMO 💻
 
 ::: notes
 Update data or code, everything else can update automatically
 
 Mention Quarto?
 :::
-
 
 ## Reproducible File Paths
 
@@ -186,7 +181,7 @@ df <- read.csv(here("data", "field_data.csv"))
 
 . . .
 
-### DEMO `r emo::ji("computer")`
+### DEMO 💻
 
 ## Reproducible Environments
 
@@ -204,7 +199,7 @@ df <- read.csv(here("data", "field_data.csv"))
 
 . . .
 
-### DEMO `r emo::ji("computer")`
+### DEMO 💻
 
 ::: notes
 Or if package update breaks your research compendium
@@ -214,14 +209,14 @@ mention that it
 
 ## Further Reading
 
-- [Five selfish reasons to work reproducibly](https://doi.org/10.1186/s13059-015-0850-7)
+-   [Five selfish reasons to work reproducibly](https://doi.org/10.1186/s13059-015-0850-7)
 
-- [research-compendium.science](https://research-compendium.science/)
+-   [research-compendium.science](https://research-compendium.science/)
 
-- [R Projects](https://r4ds.had.co.nz/workflow-projects.html)
+-   [R Projects](https://r4ds.had.co.nz/workflow-projects.html)
 
-- [`here`](https://here.r-lib.org/)
+-   [`here`](https://here.r-lib.org/)
 
-- [renv](https://rstudio.github.io/renv/articles/renv.html)
+-   [renv](https://rstudio.github.io/renv/articles/renv.html)
 
-- [CRAN Task View: Reproducible Research](https://cran.r-project.org/view=ReproducibleResearch)
+-   [CRAN Task View: Reproducible Research](https://cran.r-project.org/view=ReproducibleResearch)
