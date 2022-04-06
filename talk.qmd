@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 format: 
   revealjs:
     chalkboard: true
+    preview-links: true
 institute: "Wildlife Ecology and Conservation, University of Florida"
 ---
 
@@ -133,6 +134,8 @@ It was actually quite difficult to find an example where PCA-regression would po
 Simulation also points out the need for permutation testing for PLS
 :::
 
+# Collaborations
+
 ## Tea Metabolites
 
 Collaboration with Al Robbat Jr. in Tufts Chemistry Department
@@ -191,32 +194,21 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 
 <https://aariq.github.io/BACE-legacy-effects/>
 
-## Other Past Contributions
+## R Package Development
 
-### R Package development
+-   [`bumbl` 📦](https://cran.r-project.org/web/packages/bumbl/index.html) fits switchpoint GLMs to model bumblebee colony growth data
 
--   [`bumbl`](https://github.com/Aariq/bumbl) 📦 fits switchpoint GLMs to model bumblebee colony growth data
+-   [`bdffpRain` 📦](https://github.com/BrunaLab/BDFFP-precipitation#readme) is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
 
--   [`bdffpRain`](https://github.com/BrunaLab/BDFFP-precipitation) 📦 is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
-
-## Other Past Contributions
-
-### Workshops / Demos
-
--   RMarkdown
-
--   Reproducible analyses
-
--   Git and GitHub for ecologists
 
 ## Future Contributions
 
 ### Research
 
 ::: incremental
--   Chemometrics / metabolomics
+-   Chemometrics & metabolomics
 
--   Lagged effects
+-   Lagged effects modeling
 
 -   Generalized Additive Models (GAMs)
 
@@ -230,11 +222,11 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 ### Workshops / Demos
 
 ::: incremental
--   Data quality assurance with `pointblank` 📦
+-   Data quality assurance with [`pointblank` 📦](https://rich-iannone.github.io/pointblank/articles/VALID-I.html)
 
--   Collaborative manuscript editing with GitHub
+-   Reproducible manuscripts with [Quarto](https://quarto.org/docs/authoring/title-blocks.html)
 
--   Workflow management with `targets` 📦
+-   Workflow management with [`targets` 📦](https://docs.ropensci.org/targets/index.html)
 
--   Reprohacks
+-   [Reprohacks](https://www.reprohack.org/)
 :::
