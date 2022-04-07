@@ -186,21 +186,37 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 
 ## "Project Fishstats"
 
+![](images/fishstats.png){fig-align="center"}
+
+![](images/fishstats-skeleton.png){fig-align="center" width="578"}
+
+## "Project Fishstats"
+
+![](images/fishstats-lines.png)
+
+-   Measurements along body length are not independent
+
+-   Fit quadratic line and used coefficients as predictors in multivariate analysis
+
+## "Project Fishstats"
+
 ::: columns
 ::: {.column width="70%"}
-![](images/fishstats.png){fig-align="left"}
 
--   Morphological measurements of vertebrae along fish body length
--   Fit a quadratic line to collapse into three uncorrelated coefficients
--   Include coefficients as predictors in linear discriminant analysis (LDA)
+LDA used to relate vertebral morphology to:
+
+-   A\) Body Shape
+
+-   B\) Habitat
+
+-   C\) Swimming mode
 :::
 
 ::: {.column width="30%"}
-![](images/fishstats-body.png){fig-align="right"}
+![](images/fishstats-lda.png)
+:::
+:::
 
-![](images/fishstats-lda.png){fig-align="right"}
-:::
-:::
 
 ## Current & Historical Drought Effects
 
@@ -227,6 +243,7 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 ### Research
 
 ::: incremental
+
 -   Chemometrics & metabolomics
 
 -   Lagged effects modeling
@@ -244,6 +261,8 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 
 ::: incremental
 -   Data quality assurance with [`pointblank` 📦](https://rich-iannone.github.io/pointblank/articles/VALID-I.html)
+
+-  [Collaborative science with GitHub](https://aariq.github.io/github-for-ecologists/slides/slides.html)
 
 -   Reproducible manuscripts with [Quarto](https://quarto.org/docs/authoring/title-blocks.html)
 
