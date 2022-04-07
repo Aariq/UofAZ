@@ -138,14 +138,36 @@ Simulation also points out the need for permutation testing for PLS
 
 ## Tea Metabolites
 
-Collaboration with Al Robbat Jr. in Tufts Chemistry Department
+PhD work on Tea involved collaboration with Al Robbat Jr. in Tufts Chemistry Department
 
-::: incremental
--   Shiny app to enable data QA/QC for spectral deconvolution of GC-MS data
+::: {layout-ncol="2" layout-valign="bottom"}
+![](images/teafield.JPG)
 
--   Multivariate analyses to test climate impacts on tea metabolites and identify important markers of tea quality
+![](images/gcms.JPG)
+:::
 
--   Assign flavor and aroma percepts using `webchem` 📦
+## Tea Metabolites
+
+Shiny app to enable data QA/QC for spectral deconvolution of GC-MS data
+
+![](images/ionanalytics.png)
+
+## Tea Metabolites
+
+Multivariate analyses to test climate impacts on tea metabolites and identify important markers of tea quality
+
+![](images/oplsda.png){fig-align="center"}
+
+## Tea Metabolites
+
+Assign flavor and aroma percepts using `webchem` 📦
+
+![](images/percepts-table.png)
+
+::: {layout-ncol="2" layout-valign="bottom"}
+![](images/ropensci_logo_-_new_proj_pg_banner.png)
+
+![](images/RConsortium_Horizontal_Pantone.png)
 :::
 
 ## Climate Change and Plant Chemistry {.smaller}
@@ -199,7 +221,6 @@ Used RDA to test for impacts of warming, drought, and their interaction on secon
 -   [`bumbl` 📦](https://cran.r-project.org/web/packages/bumbl/index.html) fits switchpoint GLMs to model bumblebee colony growth data
 
 -   [`bdffpRain` 📦](https://github.com/BrunaLab/BDFFP-precipitation#readme) is a bi-lingual data package for precipitation data from the Biological Dynamics of Forest Fragments Project
-
 
 ## Future Contributions
 
