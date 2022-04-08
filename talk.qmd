@@ -9,6 +9,14 @@ format:
 institute: "Wildlife Ecology and Conservation, University of Florida"
 ---
 
+## Examples
+
+- What plant traits vary with an elevation gradient?
+
+- Which secondary metabolites are induced under drought stress?
+
+- How is cheese microbial community affected by salt stress? 
+
 ## Approaches to Multivariate Data
 
 Two-step approach common in ecology:
