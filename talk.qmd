@@ -21,10 +21,14 @@ institute: "Wildlife Ecology and Conservation, University of Florida"
 
 Two-step approach common in ecology:
 
-1.  Reduce dimensionality with, e.g., PCA
-2.  Include first 1--3 axes of co-variation in a regression
+1.  Reduce dimensionality with, e.g., PCA, into 1--3 components
+2.  Use those 1--3 components as predictors in a regression
 
-In a mini-review of 130 papers, only 20% that used this method retained more than 2 components for regression
+What about the other components?
+
+. . . 
+
+In a mini-review, only 20% of studies using this two-step method retained more than 2 components for regression
 
 ## Alternative Methods
 
@@ -64,9 +68,9 @@ The **two-step method** (e.g. PCA-regression) answers the question...
 
 . . .
 
--   Mini-review: 68 studies used principal components in other statistical models.
+-   Mini-review: 68/103 uses of PCA used it for two-step method
 
--   40 of those studies were incorrectly using PCA to answer "supervised" question
+-   40/68 had a question clearly better suited to a supervised analysis
 
 ## 
 
